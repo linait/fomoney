@@ -3,8 +3,7 @@ import Router from 'vue-router'
 // import Hello from '@/components/Hello'
 
 const en_index = r => require.ensure([], () => r(require('@/pages/en/en-index')), 'en-index')
-const index = r => require.ensure([], () => r(require('@/pages/frontend-index')), 'frontend-index')
-const about = r => require.ensure([], () => r(require('@/pages/frontend-about')), 'frontend-about')
+const company_index = r => require.ensure([], () => r(require('@/pages/company/company-index')), 'company_index')
 
 Vue.use(Router)
 
@@ -13,15 +12,15 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/en_index'
+      redirect: '/enIndex'
     },
     { 
-      path:"/en_index",
+      path:"/enIndex",
       component: en_index
     },
     { 
-      path:"/about",
-      component: about
+      path:"/companyIndex",
+      component: company_index
     }
   ]
 })
