@@ -9,11 +9,7 @@
 				  <!--轮播图第1张-->	
 				  <vue-swiper 
 							ref="swiper"
-        direction="horizontal"
-        :mousewheel-control="false"
-        :performance-mode="false"
-        :pagination-clickable="false"
-        :loop="false">
+        direction="horizontal">
 			      <div class="slide">
 			      	<ul class="clearfix">
 				        <li><a href="javascript:void(0);"><img src="/static/images/en_partner01.png" alt="复地" /></a></li>
