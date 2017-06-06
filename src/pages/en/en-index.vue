@@ -1,6 +1,5 @@
 <template>
   <div class="en-index-body">
-      <a-header></a-header>
       <!--主要内容块-->
 	<div class="company-index en-index">
 		<div class="container wc1200">
@@ -10,54 +9,49 @@
 			<!--功能连接-->
 			<div class="en-function-box clearfix">
 				<div class="box-left fl">
-					<a class="a-first" href="javascript:void(0);">
+					<router-link :to="{ path: '/enIndex/aboutUs' }" class="a-first">
 						<span>公司介绍</span>
-						<div class="shadow"></div>					
-					</a>					
-					<a class="a-second mt15" href="javascript:void(0);">
+						<div class="shadow"></div>
+					</router-link>
+					<router-link :to="{ path: '/enIndex/leadershipTeam' }" class="a-second mt15">
 						<span>领导团队</span>
 						<div class="shadow"></div>	
-					</a>
+					</router-link>
 				</div>
 				<div class="box-center fl">
-					<a class="a-first" href="javascript:void(0);">
+					<router-link :to="{ path: '/enIndex/developmentHistory' }" class="a-first">
 						<span>发展历程</span>
 						<div class="shadow"></div>	
-					</a>
+					</router-link>
 				</div>
 				<div class="box-right fl">
-					<a class="a-first" href="javascript:void(0);">
+					<router-link :to="{ path: '/enIndex/newsCenter' }" class="a-first">
 						<span>新闻中心</span>
 						<div class="shadow"></div>
-					</a>
+					</router-link>
 					<div class="mt15 clearfix">
-						<a class="a-second fl" href="javascript:void(0);">
+						<router-link :to="{ path: '/enIndex/brandCulture' }" class="a-second fl">
 							<span>品牌文化</span>
 							<div class="shadow"></div>
-						</a>
-						<a class="a-three fr" href="javascript:void(0);">
+						</router-link>
+						<router-link :to="{ path: '/enIndex/cooperativePartner' }" class="a-three fr">
 							<span>合作伙伴</span>
 							<div class="shadow"></div>
-						</a>
+						</router-link>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-    <a-footer></a-footer>
   </div>
   
 </template>
 
 <script>
-import aHeader from '@/components/header/header'
-import aFooter from '@/components/footer/footer'
+
 export default {
-  components:{
-      aHeader,
-      aFooter
-  }
+ 
 }
 </script>
 

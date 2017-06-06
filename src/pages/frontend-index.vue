@@ -1,23 +1,18 @@
 <template>
-  <div class="fontend-index">
-    <h1>{{ msg }}</h1>
+  <div>
+    <a-header></a-header>
+    <router-view></router-view>
+    <a-footer></a-footer>
   </div>
 </template>
 
 <script>
+import aHeader from '@/components/header/header'
+import aFooter from '@/components/footer/footer'
 export default {
-  name: 'fontend-index',
-  data () {
-    return {
-      msg: '这是一个测试的首页'
-    }
+  components:{
+      aHeader,
+      aFooter
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.fontend-index{
-    background-color: #ff9630;
-}
-</style>
