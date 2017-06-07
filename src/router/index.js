@@ -15,6 +15,12 @@ const en_leadership_team = r => require.ensure([], () => r(require('@/pages/en/e
 
 const company_index = r => require.ensure([], () => r(require('@/pages/company/company-index')), 'company-index')
 
+const personal_index = r => require.ensure([], () => r(require('@/pages/personal/personal-index')), 'personal-index')
+const personal_index_layout = r => require.ensure([], () => r(require('@/pages/personal/personal-index-layout')), 'personal-index')
+const personal_buycar = r => require.ensure([], () => r(require('@/pages/personal/personal-buycar')), 'personal-buycar')
+const personal_load_xxd = r => require.ensure([], () => r(require('@/pages/personal/personal-load-xxd')), 'personal-load-xxd')
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +49,18 @@ export default new Router({
     { 
       path:"/companyIndex",
       component: company_index
+    },
+    {
+      path:"/personalIndex",
+      component: personal_index
+    },
+    {
+      path:"/personalIndex",
+      component: personal_index_layout,
+      children:[
+        { path: 'loadXxd', component: personal_load_xxd },
+        { path: 'buycar', component: personal_buycar }
+      ]
     }
   ]
 })
