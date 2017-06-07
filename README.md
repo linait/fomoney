@@ -1,6 +1,6 @@
 # fomoney
 
-> fomoney fosun
+> fomoney fosun (vue2+vuex+vue-router+axios)
 
 ## Build Setup
 
