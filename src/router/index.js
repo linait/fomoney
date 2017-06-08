@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import {
+    routerMode
+} from '~config'
 // import Hello from '@/components/Hello'
 
 // const frontend_index = r => require.ensure([], () => r(require('@/pages/frontend-index')), 'frontend-index')
@@ -24,7 +27,7 @@ const personal_load_xxd = r => require.ensure([], () => r(require('@/pages/perso
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: routerMode,
   routes: [
     {
       path: '/',

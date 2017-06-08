@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import frontendNewcenter from './modules/frontend-newcenter'
+import frontendArticle from './modules/frontend-article'
 
 Vue.use(Vuex)
 
@@ -10,7 +10,7 @@ export default new Vuex.Store({
         frontend: {
             namespaced: true,
             modules: {
-                newscenter: frontendNewcenter
+                article: frontendArticle
             }
         },
     }
