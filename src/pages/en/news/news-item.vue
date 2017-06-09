@@ -1,6 +1,7 @@
 <template>
     <li>
-        <a href="javascript:;" class="clearfix">
+        <template  v-if="item.link">
+        <a :href="item.link"  class="clearfix" target="_black">
             <div class="fl image">
                 <img :src="item.image" alt="" />
             </div>
@@ -13,6 +14,22 @@
                 <p class="fs14" v-text="item.description"></p>
             </div>
         </a>
+        </template>
+        <template v-else>
+        <router-link  :to="{ path: '/enIndex/newsDetail/'+item.id }"   class="clearfix">
+            <div class="fl image">
+                <img :src="item.image" alt="" />
+            </div>
+            <div class="fr time">
+                <p class="fs36 month" v-text="item.viewDate.viewDay">05/01</p>
+                <p class="fs18 years" v-text="item.viewDate.viewYears">2017</p>
+            </div>
+            <div class="text fl">
+                <p class="fs18 title" v-text="item.title"></p>
+                <p class="fs14" v-text="item.description"></p>
+            </div>
+        </router-link>
+        </template>
     </li>
 </template>
 <script>

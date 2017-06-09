@@ -5,6 +5,18 @@ import {
 } from '~config'
 // import Hello from '@/components/Hello'
 
+const scrollBehavior = to => {
+    const position = {}
+    if (to.hash) {
+        position.selector = to.hash
+    }
+    if (to.matched.some(mm => mm.meta.scrollToTop)) {
+        position.x = 0
+        position.y = 0
+    }
+    return position
+}
+
 // const frontend_index = r => require.ensure([], () => r(require('@/pages/frontend-index')), 'frontend-index')
 
 const en_index = r => require.ensure([], () => r(require('@/pages/en/en-index')), 'en-index')
@@ -15,6 +27,7 @@ const en_cooperative_partner = r => require.ensure([], () => r(require('@/pages/
 const en_brand_culture = r => require.ensure([], () => r(require('@/pages/en/en-brand-culture')), 'en-index')
 const en_development_history = r => require.ensure([], () => r(require('@/pages/en/en-development-history')), 'en-index')
 const en_leadership_team = r => require.ensure([], () => r(require('@/pages/en/en-leadership-team')), 'en-index')
+const en_news_detail = r => require.ensure([], () => r(require('@/pages/en/en-news-detail')), 'en-index')
 
 const company_index = r => require.ensure([], () => r(require('@/pages/company/company-index')), 'company-index')
 
@@ -28,6 +41,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: routerMode,
+  scrollBehavior,
   routes: [
     {
       path: '/',
@@ -44,9 +58,10 @@ export default new Router({
         { path: 'aboutUs', component: en_about_us },
         { path: 'leadershipTeam', component: en_leadership_team },
         { path: 'developmentHistory', component: en_development_history },
-        { path: 'newsCenter', component: en_news_center },
+        { path: 'newsCenter', component: en_news_center , meta: { scrollToTop: true }},
         { path: 'brandCulture', component: en_brand_culture },
         { path: 'cooperativePartner', component: en_cooperative_partner },
+        { path: 'newsDetail/:id', component: en_news_detail , meta: { scrollToTop: true }},
       ]
     },
     { 

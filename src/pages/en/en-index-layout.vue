@@ -1,6 +1,6 @@
 <template>
   <!--banner-->
-	<div>
+	<div> <a-header></a-header>
 		<div class="en-banner"><img src="/static/images/en_banner.jpg" alt="走进汇智星banner" /></div>
 	<!--nav-->
 	<div class="enter-fosun">
@@ -11,13 +11,20 @@
 		</ul>
 	</div>
 	<router-view></router-view>
+	<a-footer></a-footer>
 </div>
   
 </template>
 
 <script>
+import aHeader from '@/components/header/header'
+import aFooter from '@/components/footer/footer'
 
 export default {
+	components:{
+      aHeader,
+      aFooter
+  },
 	data(){
 		 return{
 			data:[

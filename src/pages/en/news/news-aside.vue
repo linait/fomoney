@@ -8,7 +8,7 @@
 </div>
 </template>
 <style>
-.news-center .content-tab .content-right{width: 340px;}
-.news-center .content-tab .content-right ul{margin-left: 40px;}
+.content-right{width: 340px;}
+.content-right ul{margin-left: 40px;}
 </style>
 

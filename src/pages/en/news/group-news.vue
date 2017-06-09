@@ -7,7 +7,9 @@
                     <p class="time fs30">{{item.viewDate.viewDayEn}},{{item.viewDate.viewYears}}</p>
                     <p class="title fs18 mt20" v-text="item.title"></p>
                     <p class="fs14 text mt10" v-text="item.description"></p>
-                    <a class="btn mt20" href="javascript:;"><img src="/static/images/en_news_view.png" alt=""></a>
+                    <router-link :to="{ path: '/enIndex/newsDetail/'+item.id }"  class="btn mt20">
+                    <img src="/static/images/en_news_view.png" alt="">
+                    </router-link>
                 </div>
                 <div class="fr"><img :src="item.originalImage" alt=""></div>
             </div>

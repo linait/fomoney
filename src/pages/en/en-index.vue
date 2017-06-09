@@ -1,5 +1,7 @@
 <template>
+
   <div class="en-index-body">
+	  <a-header></a-header>
       <!--主要内容块-->
 	<div class="company-index en-index">
 		<div class="container wc1200">
@@ -43,15 +45,18 @@
 			</div>
 		</div>
 	</div>
-
+<a-footer></a-footer>
   </div>
-  
 </template>
 
 <script>
-
+import aHeader from '@/components/header/header'
+import aFooter from '@/components/footer/footer'
 export default {
- 
+ components:{
+      aHeader,
+      aFooter
+  }
 }
 </script>
 
