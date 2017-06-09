@@ -4,21 +4,6 @@
         <div class="news-list">
             <ul>
                 <news-item v-for="(item,index) in topics.data" :item="item" :key="item.id"></news-item>
-                <!--<li v-for="(item,index) in topics.data">
-                    <a href="javascript:;" class="clearfix">
-                        <div class="fl image">
-                            <img :src="item.image" alt="" />
-                        </div>
-                        <div class="fr time">
-                            <p class="fs36 month" v-text="item.viewDate.viewDay">05/01</p>
-                            <p class="fs18 years" v-text="item.viewDate.viewYears">2017</p>
-                        </div>
-                        <div class="text fl">
-                            <p class="fs18 title" v-text="item.title"></p>
-                            <p class="fs14" v-text="item.description"></p>
-                        </div>
-                    </a>
-                </li>-->
             </ul>
             <a class="btn" @click="loadMore()" v-if="isMore">点击查看更多</a>
             <a class="btn gey" v-if="!isMore" style="background-color: #e5e5e5;">没有更多了</a>
@@ -30,19 +15,19 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import newsAside from '@/components/common/news-aside'
-import newsItem from '@/components/common/news-item'
+import newsAside from '@/pages/en/news/news-aside'
+import newsItem from '@/pages/en/news/news-item'
 
 const fetchInitialData = async (store, config) => {
     config = {
         pageNo:config.pageNo,
-        pageSize: 1,
+        pageSize: 10,
         categoryId: 4
     }
 	await store.dispatch('frontend/article/getArticleList',	config)
 }
 export default {
-    name: 'media-news',
+    // name: 'media-news',
 	// prefetch: fetchInitialData,
 	data(){
 		return {

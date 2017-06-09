@@ -69,10 +69,11 @@ const mutations = {
         // console.log('receiveArticleList:'+list);
         // console.log(imgBaseUrl);
         list.map(function (v,i) {
+            // console.log(v.originalImage);
             v.image = imgBaseUrl + v.image;
-            v.imageSrc = imgBaseUrl + v.imageSrc;
+            v.originalImage = imgBaseUrl + v.originalImage;
             //日期格式化
-           
+           console.log(v.originalImage);
             var updateDate = v.updateDate;
             var updateDates = v.updateDate.split(' ')[0].split('-');
             // console.log(updateDates);

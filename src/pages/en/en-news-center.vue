@@ -38,8 +38,10 @@ layui.use('element', function(){
 })
 // import { mapGetters } from 'vuex'
 // import newsAside from '@/components/common/news-aside'
-import groupNews from '@/components/news/group-news'
-import mediaNews from '@/components/news/media-news'
+import groupNews from '@/pages/en/news/group-news'
+import mediaNews from '@/pages/en/news/media-news'
+import dataSection from '@/pages/en/news/data-section'
+
 
 // const fetchInitialData = async (store, config) => {
 //     // const {params: {id, key, by}, path} = store.state.route
@@ -69,7 +71,8 @@ export default {
 	// 	newsAside,
 	// 	newsItem
 		groupNews,
-		mediaNews
+		mediaNews,
+		dataSection
 	},
 	// computed: {
     //     ...mapGetters({
@@ -85,7 +88,7 @@ export default {
 			}else if(index===2){
 				this.currentView = mediaNews;
 			}else{
-				this.currentView = groupNews;
+				this.currentView = dataSection;
 			}
         }
     },

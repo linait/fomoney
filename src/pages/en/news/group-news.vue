@@ -9,7 +9,7 @@
                     <p class="fs14 text mt10" v-text="item.description"></p>
                     <a class="btn mt20" href="javascript:;"><img src="/static/images/en_news_view.png" alt=""></a>
                 </div>
-                <div class="fr"><img :src="item.image" alt=""></div>
+                <div class="fr"><img :src="item.originalImage" alt=""></div>
             </div>
             <ul class="mt20">
                 <news-item v-for="(item,index) in topics.data" :item="item" v-if="index!=0"  :key="item.id"></news-item>
@@ -39,8 +39,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import newsAside from '@/components/common/news-aside'
-import newsItem from '@/components/common/news-item'
+import newsAside from '@/pages/en/news/news-aside'
+import newsItem from '@/pages/en/news/news-item'
 
 const fetchInitialData = async (store, config) => {
     config = {
