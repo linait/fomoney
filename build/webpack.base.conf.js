@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
@@ -25,7 +26,8 @@ module.exports = {
       '@': resolve('src'),
       '~api': path.resolve(__dirname, '../src/api'),
       '~store': path.resolve(__dirname, '../src/store'),
-      '~config': path.resolve(__dirname, '../src/config')
+      '~config': path.resolve(__dirname, '../src/config'),
+      // 'jquery': path.resolve(__dirname, '../static/js/plugins/jquery-1.11.3.min')
     }
   },
   module: {
@@ -57,5 +59,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  // plugins: [
+  //     new webpack.ProvidePlugin({
+  //         $: "jquery",
+  //         jQuery: "jquery"
+  //     })
+  //  ]
 }

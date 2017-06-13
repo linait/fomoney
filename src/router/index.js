@@ -17,7 +17,7 @@ const scrollBehavior = to => {
     return position
 }
 
-// const frontend_index = r => require.ensure([], () => r(require('@/pages/frontend-index')), 'frontend-index')
+const index = r => require.ensure([], () => r(require('@/pages/index')), 'index')
 
 const en_index = r => require.ensure([], () => r(require('@/pages/en/en-index')), 'en-index')
 const en_index_layout = r => require.ensure([], () => r(require('@/pages/en/en-index-layout')), 'en-index')
@@ -37,6 +37,11 @@ const personal_buycar = r => require.ensure([], () => r(require('@/pages/persona
 const personal_load_xxd = r => require.ensure([], () => r(require('@/pages/personal/personal-load-xxd')), 'personal-load-xxd')
 
 
+const app_download = r => require.ensure([], () => r(require('@/pages/common/app-download')), 'app_download')
+const contact_us = r => require.ensure([], () => r(require('@/pages/common/contact-us')), 'contact_us')
+const join_us = r => require.ensure([], () => r(require('@/pages/common/join-us')), 'join_us')
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -44,24 +49,30 @@ export default new Router({
   scrollBehavior,
   routes: [
     {
+      path: '/index',
+      component: index
+    },
+    {
       path: '/',
-      redirect: '/enIndex'
+      redirect: '/index'
     },
     { 
       path:"/enIndex",
-      component: en_index
+      component: en_index,
+      meta: { scrollToTop: true }
     },
     { 
       path:"/enIndex",
       component: en_index_layout,
+      meta: { scrollToTop: true },
       children:[
         { path: 'aboutUs', component: en_about_us },
         { path: 'leadershipTeam', component: en_leadership_team },
         { path: 'developmentHistory', component: en_development_history },
-        { path: 'newsCenter', component: en_news_center , meta: { scrollToTop: true }},
+        { path: 'newsCenter', component: en_news_center},
         { path: 'brandCulture', component: en_brand_culture },
         { path: 'cooperativePartner', component: en_cooperative_partner },
-        { path: 'newsDetail/:id', component: en_news_detail , meta: { scrollToTop: true }},
+        { path: 'newsDetail/:id', component: en_news_detail},
       ]
     },
     { 
@@ -79,6 +90,18 @@ export default new Router({
         { path: 'loadXxd', component: personal_load_xxd },
         { path: 'buycar', component: personal_buycar }
       ]
-    }
+    },
+    { 
+      path:"/appDownload",
+      component: app_download, meta: { scrollToTop: true }
+    },
+    { 
+      path:"/contactUs",
+      component: contact_us, meta: { scrollToTop: true }
+    },
+    { 
+      path:"/joinUs",
+      component: join_us, meta: { scrollToTop: true }
+    },
   ]
 })

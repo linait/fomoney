@@ -108,15 +108,15 @@
 .header-contact .hd-container a:hover{color: #000000;}
 /*===走进汇智星首页和企业通首页公共样式===*/
 .company-index .container{padding:144px 0 138px 0;position:relative;}
-.company-index .container .bg01{position:absolute;left:-72px;top:65px;z-index:-99;}
-.company-index .container .bg02{position:absolute;right:-72px;top:65px;z-index:-99;}
+.company-index .container .bg01{position:absolute;left:-72px;top:65px;z-index:0;}
+.company-index .container .bg02{position:absolute;right:-72px;top:65px;z-index:0;}
 .company-index .container .title{border-bottom:1px solid #efefef;width:514px;position:relative;margin:0 auto;}
-.company-index .container .title span{dispaly:block;width:140px;background-color:#fff;font-size:28px;position:absolute;left:50%;margin:-28px 0 0 -70px;text-align:center;}
+.company-index .container .title span{display:block;width:140px;background-color:#fff;font-size:28px;position:absolute;left:50%;margin:-28px 0 0 -70px;text-align:center;}
 /*===form表单===*/
 .common-form table td{width: 100px;padding: 10px 0;}
 .common-form table td input,.common-form table td textarea{width: 450px;border:0;border:2px solid #f5f5f6;}
 .common-form table td input{line-height:38px;height:38px;}
-.common-form input{padding-left:15px;}
+.common-form input[type='text']{padding-left:15px;}
 .submit-btn{background-color:#00a5fa;color: #FFFFFF;padding: 0;border: 0;}
 .tong-common-form{padding:20px 30px 30px 40px;}
 .tong-common-form table{margin:0 0 40px 20px;}

@@ -54,16 +54,32 @@ var webpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true,
       //压缩html代码
-      //minify: {
-      //  removeComments: true,
-      //  collapseWhitespace: true,
-      //  removeAttributeQuotes: true
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
-      //},
+      },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
+    // new HtmlWebpackPlugin({
+    //   chunks: [
+    //       'manifest'
+    //   ],
+    //   filename: 'one.html',
+    //   template: 'one.html',
+    //   inject: true,
+    //   minify: {
+    //    removeComments: true,
+    //    collapseWhitespace: true,
+    //    removeAttributeQuotes: true
+    //     // more options:
+    //     // https://github.com/kangax/html-minifier#options-quick-reference
+    //   },
+    //   chunksSortMode: 'dependency'
+    // }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

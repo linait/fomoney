@@ -1,7 +1,7 @@
 <template>
   <!--banner-->
 	<div> <a-header></a-header>
-		<div class="en-banner"><img src="/static/images/en_banner.jpg" alt="走进汇智星banner" /></div>
+		<div class="en-banner"></div>
 	<!--nav-->
 	<div class="enter-fosun">
 		<ul class="nav wc1200 clearfix">
@@ -78,3 +78,10 @@ export default {
 }
 
 </script>
+<style>
+.en-banner{
+	height: 245px;
+	background: url('/static/images/en_banner.jpg') no-repeat center center;
+	background-size: cover;
+}
+</style>

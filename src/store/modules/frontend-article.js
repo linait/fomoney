@@ -11,8 +11,7 @@ const state = {
         totalPage: 0
     },
     item: {
-        data: {},
-        path:''
+        data: {}
     }
 }
 
@@ -30,7 +29,8 @@ const actions = {
             })
         }
     },
-    async ['getArticleItem']({ commit, rootState: {route: { path, params: { id }}} }) {
+    async ['getArticleItem']({ commit, rootState: {route: { path, params: { id }}}},config) {
+        if(!id)id=config.id
         const { data: { data, code} } = await api.get('/article/item', { id })
         console.log(data);
         if (data && code === 200) {
@@ -70,14 +70,14 @@ const mutations = {
             data: list, hasNext, hasPrev, pageNo, totalPage
         }
     },
-    ['receiveArticleItem'](state, {data, path}) {
+    ['receiveArticleItem'](state, {data}) {
         var updateDate = data.updateDate;
         var updateDates = data.updateDate.split(' ');
         data.viewDate = {
             viewDay:updateDates[0]
         }
         state.item = {
-            data, path
+            data
         }
     }
 }
